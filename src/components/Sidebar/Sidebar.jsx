@@ -1,4 +1,5 @@
 import "./Sidebar.css"
+import PropTypes from "prop-types"
 
 import home from "../../assets/home.png"
 import automobiles from "../../assets/automobiles.png"
@@ -16,9 +17,6 @@ import megan from "../../assets/megan.png"
 import cameron from "../../assets/cameron.png"
 
 const Sidebar = ({ sidebar, category, setCategory }) => {
-    // setCategory(20)
-    console.log(category)
-
     
   return (
 
@@ -88,7 +86,13 @@ const Sidebar = ({ sidebar, category, setCategory }) => {
         </div>
     </div>
 
-  )
+ )
 }
 
-export default Sidebar
+Sidebar.propTypes = {
+    sidebar: PropTypes.bool,
+    category: PropTypes.number.isRequired,
+    setCategory: PropTypes.func.isRequired,
+}
+
+export default Sidebar;
